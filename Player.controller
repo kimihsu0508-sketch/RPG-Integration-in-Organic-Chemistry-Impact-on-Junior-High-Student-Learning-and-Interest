@@ -1,265 +1,278 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-1853524554734148237
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Walk
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 3436700838386408605}
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 6003587384315995140}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1107 &-580042605539744777
-AnimatorStateMachine:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Base Layer
-  m_ChildStates:
-  - serializedVersion: 1
-    m_State: {fileID: 9150485829096156820}
-    m_Position: {x: 290, y: -170, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -1853524554734148237}
-    m_Position: {x: 320, y: 150, z: 0}
-  m_ChildStateMachines: []
-  m_AnyStateTransitions: []
-  m_EntryTransitions: []
-  m_StateMachineTransitions: {}
-  m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 9150485829096156820}
---- !u!91 &9100000
-AnimatorController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Player
-  serializedVersion: 5
-  m_AnimatorParameters:
-  - m_Name: moveX
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: moveY
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: isMoving
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  m_AnimatorLayers:
-  - serializedVersion: 5
-    m_Name: Base Layer
-    m_StateMachine: {fileID: -580042605539744777}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
---- !u!1101 &3436700838386408605
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: isMoving
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 9150485829096156820}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.625
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!206 &6003587384315995140
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8b15454b1755cb84d9437fab3fb9922d, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: -1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6f743a0b2ccceb241ab84ed42dbb952b, type: 2}
-    m_Threshold: 0.33333334
-    m_Position: {x: 0, y: 1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8b15454b1755cb84d9437fab3fb9922d, type: 2}
-    m_Threshold: 0.6666667
-    m_Position: {x: -1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6f743a0b2ccceb241ab84ed42dbb952b, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  m_BlendParameter: moveX
-  m_BlendParameterY: moveY
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 1
---- !u!1101 &6411991878367312152
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isMoving
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -1853524554734148237}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!206 &9131446185525242657
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: cf292bbcbc746f5428957f8aca4ad7df, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: -1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: cf292bbcbc746f5428957f8aca4ad7df, type: 2}
-    m_Threshold: 0.33333334
-    m_Position: {x: 0, y: 1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 43189d1c48bf83d4cbd65d27c5334e04, type: 2}
-    m_Threshold: 0.6666667
-    m_Position: {x: -1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ae6193a105c3e0648afbfce77bbca331, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: moveX
-    m_Mirror: 0
-  m_BlendParameter: moveX
-  m_BlendParameterY: moveY
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 1
---- !u!1102 &9150485829096156820
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 6411991878367312152}
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 9131446185525242657}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PlayerController : MonoBehaviour
+{
+    public float movSpeed;
+    public int near;
+    public int stage2;
+    public LayerMask solidObjectsLayer;
+    public LayerMask grassLayer;
+    public LayerMask Walls;
+    public LayerMask DoorsLayer;
+    public GameObject Doors1;
+    public LayerMask sulfurLayer;
+    public GameObject sulfur;
+    public GameObject NaCl;
+    public GameObject touch;
+    public GameObject blank;
+    public GameObject water;
+    public GameObject water2;
+    public GameObject saltwater;
+    public GameObject elec;
+    public GameObject H2;
+    public GameObject He;
+    public GameObject HCl;
+    public GameObject Door;
+    public GameObject Door2;
+    public GameObject Benyzl;
+    public GameObject tears;
+    public GameObject h2so4;
+    public GameObject fire;
+    public GameObject policeman;
+    public GameObject policewoman;
+
+    public string collide;
+    public bool change = false;
+    private bool isMoving;
+    private Vector2 input;
+    private Animator animator;
+    public TMPController tmpgo;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+    void Start(){
+        saltwater.SetActive(false);
+        HCl.SetActive(false);
+        tears.SetActive(false);
+        stage2 = 0;
+   }
+
+    private void Update(){
+        
+        if(!isMoving){
+            input.x = Input.GetAxisRaw("Horizontal");
+            input.y = Input.GetAxisRaw("Vertical");
+            if(input.x != 0) input.y = 0;
+            if(input != Vector2.zero){
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+                var targetPos = transform.position;
+                targetPos.x += input.x;
+                targetPos.y += input.y; 
+            if(IsWalkable(targetPos))
+                StartCoroutine(Move(targetPos));
+        }
+        }
+        animator.SetBool("isMoving", isMoving);
+        if(near == 1){
+            Debug.Log("Encountered a wild Pokemon");
+                if(Input.GetMouseButtonDown(0)){
+                    Doors1.SetActive(false);
+                }
+        }
+        if(collide == "blank2" && touch == h2so4){
+                Door.SetActive(false);
+                tmpgo.tipgo(13,"h2o4");
+            }
+
+        
+        if(Input.GetMouseButtonDown(0)){
+            if(collide =="water_2" && touch == NaCl){
+            tmpgo.tipgo(4,"water_2");
+            water2.SetActive(false);
+            NaCl.SetActive(false);
+            saltwater.SetActive(true);
+            touch = saltwater;
+            stage2+=1;
+
+    
+            }
+            if(collide == "elec"&&touch == saltwater){
+                saltwater.SetActive(false);
+                touch = blank;
+                tmpgo.tipgo(5,"elec");
+                stage2+=1;
+            }
+            if(collide == "negative"&&touch == H2&&stage2>1 && He.activeSelf){
+                H2.SetActive(false);
+                touch = blank;
+                tmpgo.tipgo(8,"blank");
+                stage2+=1;
+            }
+            if(collide == "negative"&&touch == H2&&stage2>1 && !He.activeSelf){
+                H2.SetActive(false);
+                touch = blank;
+                tmpgo.tipgo(10,"blank");
+                stage2+=1;
+            }
+            if(collide == "positive"&&touch == He&&stage2>1&&H2.activeSelf){
+                He.SetActive(false);
+                tmpgo.tipgo(5,"blank");
+                touch = blank;
+                stage2+=1;
+            }
+            if(collide == "positive"&&touch == He&&stage2>1&&!H2.activeSelf){
+                He.SetActive(false);
+                tmpgo.tipgo(10,"blank");
+                touch = blank;
+                stage2+=1;
+            }
+            if(!He.activeSelf&&!H2.activeSelf&&touch == blank){
+                HCl.SetActive(true);
+            }
+            if(collide == "HCl" && touch == Benyzl&&stage2>3){
+                tears.SetActive(true);
+                tmpgo.tipgo(12,"blank");
+                HCl.SetActive(false);
+                Benyzl.SetActive(false);
+            }
+            else{
+            touch = blank;
+            }
+
+        }else{
+        touch.transform.position = new Vector2 (gameObject.transform.position.x+1,gameObject.transform.position.y);
+        }
+    
+    }
+
+    IEnumerator Move(Vector3 targetPos)
+    {
+        isMoving = true;
+
+        while((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, movSpeed*Time.deltaTime);
+            yield return null;
+        }
+        transform.position = targetPos;
+        isMoving = false;
+
+        CheckForEncounters();
+    }
+    private bool IsWalkable(Vector3 targetPos)
+    {
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) != null)
+        {
+            return false;
+        }
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, Walls) != null)
+        {
+            return false;
+        }
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, DoorsLayer) != null)
+        {
+            return false;
+        }
+        return true;
+    }
+    private void CheckForEncounters()
+    {
+        if(Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
+        {
+            if(Random.Range(1, 101)<10)
+            {
+                Debug.Log("Encountered a wild Pokemon");
+            }
+        }
+        if(Physics2D.OverlapCircle(transform.position, 0.5f, DoorsLayer) != null)
+        {
+            near = 1;
+        }
+        else{
+            near = 0;
+        }
+
+        /*if(Physics2D.OverlapCircle(transform.position, 0.5f, sulfurLayer) != null)
+        {
+            sulfur.transform.position = new Vector2 (transform.position.x,transform.position.y);
+            Debug.Log("hello");
+        }*/
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) 
+    {
+        
+        if(collision.gameObject.name == "sulfur"){
+            tmpgo.tipgo(0,"sulfur");
+            collision.gameObject.GetComponent<Sulfur>().touch = 1;
+            talkall.talkgo();
+        }
+        if(collision.gameObject.name == "so2"){
+            tmpgo.tipgo(1,"so2");
+            collision.gameObject.GetComponent<so2>().touch = 1;
+        }
+        if(collision.gameObject.name == "h2so4"){
+            touch = h2so4;
+            tmpgo.tipgo(2,"h2so4");
+            collision.gameObject.GetComponent<h2so4>().touch = 1;
+        }
+        if(collision.gameObject.name == "NaCl" && touch == blank){
+            tmpgo.tipgo(3,"NaCl");
+            touch = NaCl;
+        }
+        if(collision.gameObject.name == "water_2"){
+            collide = "water_2";
+        }
+        if(collision.gameObject.name == "saltwater" && touch == blank){
+            touch = saltwater;
+        }
+        if(collision.gameObject.name == "elec"){
+            collide = "elec";
+        }
+        if(collision.gameObject.name == "H2" && touch == blank&&stage2>1){
+            touch = H2;
+            if(saltwater.activeSelf){
+                tmpgo.tipgo(6,"H2");
+            }else{
+                tmpgo.tipgo(7,"H2");
+            }
+        }
+        if(collision.gameObject.name == "He" && touch == blank&&stage2>1){
+            touch = He;
+            if(saltwater.activeSelf){
+                tmpgo.tipgo(6,"H2");
+            }else{
+                tmpgo.tipgo(9,"He");
+            }
+        }
+        if(collision.gameObject.name == "negative"){
+            collide = "negative";
+        }
+        if(collision.gameObject.name == "positive"){
+            collide = "positive";
+        }
+        if(collision.gameObject.name == "HCl"){
+            collide = "HCl";
+        }
+        if(collision.gameObject.name == "blank2"){
+            collide = "blank2";
+        }
+        if(collision.gameObject.name == "Benyzl"&&stage2>3){
+            touch = Benyzl;
+            tmpgo.tipgo(11,"Benyzl");
+        }
+        if(collision.gameObject.name == "Tears"){
+            touch = tears;
+        }
+        if(collision.gameObject.name == "fire"){
+            collide = "fire";
+            tears.SetActive(false);
+            policeman.SetActive(false);
+            policewoman.SetActive(false);
+            StartCoroutine(DelayAndLoadScene());
+                    }
+        Debug.Log(collision.gameObject.name);
+    }
+    private IEnumerator DelayAndLoadScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadSceneAsync("Continue");
+    }
+}
+
